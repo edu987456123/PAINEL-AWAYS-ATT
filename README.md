@@ -482,21 +482,6 @@ VisualTab:CreateToggle({
    end,
 })
 
-local Veritem = VisualTab:CreateButton({
-    Name = "Fly (ant ban)",
-    Callback = function()
-    -- Supondo que você tenha um botão chamado "Botao" no seu GUI
-local Botao = script.Parent -- Isso assume que o script está dentro do botão
-
--- Função que será chamada quando o botão for clicado
-local function onButtonClick()
-    -- Executa o código desejado quando o botão for clicado
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
-end
-
--- Conecta a função de clique ao evento do botão
-Botao.MouseButton1Click:Connect(onButtonClick)
-
 local TeleportTab = Window:CreateTab("Teleports")
 local Paragraph = TeleportTab:CreateParagraph({Title = "AWAYS NO TOPO", Content = "feito por web7 & Cavo"})
 
@@ -898,3 +883,10 @@ UserInputService.InputBegan:Connect(function(input, gameProcessed)
         sendRevistarMessage()
     end
 end)
+
+local Section = otoTab:CreateSection("AUTO CL CONFIG")
+-- Verifica se getgenv está disponível
+if getgenv == nil then
+    error("getgenv não está definido neste ambiente.")
+end
+
